@@ -8,6 +8,8 @@ import os
 #import conn
 w = '''112.224.65.85 - - [20/Aug/2013:00:01:02 +0800] \
 "POST /api/topic/comments HTTP/1.1" 200 3804 "-" "Corax/0.7.0 CFNetwork/609.1.4 Darwin/13.0.0" "-" "1.173" "0.005"'''
+
+
 files_dir = "/home/jackey/"
 bak_dir = "/opt"
 
