@@ -1,0 +1,19 @@
+---
+  checkhost:
+    us-east-3-bd.airdroid.com: [9990,9991,9992,8555,9980]
+    us-1-push-beta.airdroid.com: [6972,8098]
+    us-east-4-bd.airdroid.com: [9990,9991,9992,8555,9980]
+    us-east-2-data.airdroid.com: [9088,8088,8555,843]
+    us-east-4-data.airdroid.com: [9088,8088,8555,843]
+    us-east-2-push.airdroid.com: [9096,8555]
+    us-east-10-push.airdroid.com: [9096,8555]
+    eu-west-1-data.airdroid.com: [9088,8088,8555,843]
+    eu-west-1-bd.airdroid.com:  [9990,9991,9992,8555,9980]
+    sa-east-1-data.airdroid.com:  [9088,8088,8555,843]
+    sa-east-1-bd.airdroid.com:  [9990,9991,9992,8555,9980]
+    jp-1-data.airdroid.com: [9088,8555,843]
+    jp-1-bd.airdroid.com: [9990,9991,9992,8555,9980]
+    us-east-7-push.airdroid.com:  [9096,8555]
+    lb.airdroid.com:  [9071,9081,8765,8766]
+
+
