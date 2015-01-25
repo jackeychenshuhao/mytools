@@ -1,0 +1,42 @@
+conn=MySQLdb.connect(host='192.168.1.22',user='test',passwd='pass',port=3306,db='python')
+cur=conn.cursor()
+sql = "INSERT INTO python.test VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+while True:
+    line = logfile.readline()
+    if not line:break
+    matchs = nginxLogPattern.match(line)
+    if matchs != None:
+        allGroup = matchs.groups()
+        ip = allGroup[0]
+        time = allGroup[1]
+        request = allGroup[2]
+        status = allGroup[3]
+        bodyBytesSent = allGroup[4]
+        refer = allGroup[5]
+        userAgent = allGroup[6]
+        Time = time.replace('T',' ')[1:-7]
+        if len(userAgent) > 20:
+            userinfo = userAgent.split(' ')
+            userkel =  userinfo[0]
+            try:
+                usersystem = userSystems.findall(userAgent)
+                usersystem = usersystem[0]
+                print usersystem
+                userliu = userlius.findall(userAgent)
+                value = [ip,Time,request,status,bodyBytesSent,refer,userkel,usersystem,userliu[1]]
+                conn.commit()
+                print value
+            except IndexError:
+                userinfo = userAgent
+                value = [ip,Time,request,status,bodyBytesSent,refer,userinfo,"",""]
+        else:
+            useraa = userAgent
+            value = [ip,Time,request,status,bodyBytesSent,refer,useraa,"",""]
+    try:
+        result = cur.execute(sql,value)
+        #conn.commit()
+        print result
+    except MySQLdb.Error,e:
+        print "Mysql Error %d: %s" % (e.args[0], e.args[1])
+conn.commit()
+conn.close()

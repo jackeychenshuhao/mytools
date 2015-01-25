@@ -1,0 +1,49 @@
+xrk_hostinfo    xrk_monitordata
+
+段名                  数据类型        默认值     允许非空        自动自增        备注
+
+ID                   int（11）                no              是           业务ID
+
+AppName             char（20）                no                           业务名称
+
+URL                 char（100）               no                           探测URL
+
+IDC                 char（10）                no                           探测点
+
+Alarmtype           char（10）                no                           告警类型
+
+Alarmconditions     char（20）                no                           告警条件
+
+
+
+段名                  数据类型            默认值        允许非空        自动自增         备注
+
+ID                      int（11）                     全部不为空       是              探测结果ID
+
+FID                     int（11）                                     下面全否         业务ID
+
+NAMELOOKUP_TIME         double                                                        DNS解析时间
+
+CONNECT_TIME            double                                                        建立连接时间
+
+PRETRANSFER_TIME        double                                                        准备传输时间
+
+STARTTRANSFER_TIME      double                                                        开始传输时间
+
+TOTAL_TIME              double                                                        传输总时间
+
+HTTP_CODE               char（80）                                                    HTTP状态或异常信息
+
+SIZE_DOWNLOAD           int（6）                                                      下载数据包大小
+
+HEADER_SIZE             smallint（6）                                                 HTTP头大小
+
+REQUEST_TIME            smallint（6）                                                 请求包大小
+
+CONNENET_LENGTH_DOWNLOAD   smallint（6）                                              下载内容长度
+
+SPEED_DOWNLOAD          int（6）                                                      下载速度
+
+DATETIME                int（11）                                                     探测时间
+
+MARK                    enum('0','1')                                                更新rrdtool标记
