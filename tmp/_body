@@ -1,10 +1,9 @@
-HTTP/1.1 302 Found
-Location: http://www.baidu.com/index.php?tn=01025065_7_pg
-Content-Type: text/html;charset=gb2312
-Pragma: no-cache
-Cache-Control: no-cache
-Connection: close
-Server: wys
-Content-Length: 238
+HTTP/1.1 200 OK
+Server: Tengine
+Date: Mon, 26 Jan 2015 16:31:36 GMT
+Content-Type: text/html
+Transfer-Encoding: chunked
+Connection: keep-alive
+Vary: Accept-Encoding
 
-<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=gb2312">.<TITLE>302 Moved</TITLE></HEAD><BODY><H1>302 Moved</H1>.The document has moved<A HREF="http://www.baidu.com/index.php?tn=01025065_7_pg">here</A></BODY></HTML>
+Please go away~~ 

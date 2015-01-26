@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-DBNAME = 'WebMonitor'
-DBUSER = 'webmonitor_user'
+DBNAME = 'test'
+DBUSER = 'root'
 DBPASSWORD = 'redhat'
 DBHOST = '127.0.0.1'
 IDC = "ct"

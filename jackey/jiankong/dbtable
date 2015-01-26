@@ -14,6 +14,15 @@ Alarmtype           char（10）                no                           告
 
 Alarmconditions     char（20）                no                           告警条件
 
+CREATE TABLE `xrk_hostinfo` (
+ `ID` int(11) NOT NULL AUTO_INCREMENT,
+ `AppName` varchar(20) NOT NULL,
+ `URL` char(100) NOT NULL,
+ `IDC` varchar(10) NOT NULL,
+ `Alarmtype` varchar(10) NOT NULL,
+ `Alarmconditions` varchar(20) NOT NULL,
+ PRIMARY KEY (`ID`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 段名                  数据类型            默认值        允许非空        自动自增         备注
@@ -47,3 +56,44 @@ SPEED_DOWNLOAD          int（6）                                              
 DATETIME                int（11）                                                     探测时间
 
 MARK                    enum('0','1')                                                更新rrdtool标记
+
+CREATE TABLE `xrk_monitordata` (
+ `ID` int(11) NOT NULL AUTO_INCREMENT,
+ `FID` int(11)  NOT NULL,
+ `NAMELOOKUP_TIME` double NOT NULL,
+ `CONNECT_TIME` double NOT NULL,
+ `PRETRANSFER_TIME` double NOT NULL,
+ `STARTTRANSFER_TIME` double NOT NULL,
+ `TOTAL_TIME` double NOT NULL,
+ `HTTP_CODE` char(80) NOT NULL,
+ `SIZE_DOWNLOAD` char(10) NOT NULL,
+ `HEADER_SIZE` smallint (6) NOT NULL,
+ `REQUEST_TIME` smallint (6) NOT NULL,
+ `CONNENET_LENGTH_DOWNLOAD` smallint(6) NOT NULL,
+ `SPEED_DOWNLOAD` int(6)  NOT NULL,
+ `DATETIME` int(11)  NOT NULL,
+ `MARK`  enum('0','1')  NOT NULL,
+  KEY `xrk_hostinfo` (`ID`),
+  KEY `xrk_monitordata` (`FID`),
+ CONSTRAINT `FK_ID` FOREIGN KEY(`FID`) REFERENCES `xrk_hostinfo`(`ID`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `xrk_monitordata` (
+ `ID` int(11) NOT NULL AUTO_INCREMENT,
+ `FID` int(11)  NOT NULL,
+ `NAMELOOKUP_TIME` double NOT NULL,
+ `CONNECT_TIME` double NOT NULL,
+ `PRETRANSFER_TIME` double NOT NULL,
+ `STARTTRANSFER_TIME` double NOT NULL,
+ `TOTAL_TIME` double NOT NULL,
+ `HTTP_CODE` char(80) NOT NULL,
+ `SIZE_DOWNLOAD` char(10) NOT NULL,
+ `HEADER_SIZE` smallint (6) NOT NULL,
+ `REQUEST_TIME` smallint (6) NOT NULL,
+ `CONNENET_LENGTH_DOWNLOAD` smallint(6) NOT NULL,
+ `SPEED_DOWNLOAD` int(6)  NOT NULL,
+ `DATETIME` int(11)  NOT NULL,
+ `MARK`  enum('0','1')  NOT NULL,
+  PRIMARY KEY (`ID`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
